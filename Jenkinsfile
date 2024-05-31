@@ -1,4 +1,4 @@
-    pipeline {
+pipeline {
     agent any
     triggers {
         pollSCM '*/5 * * * *'
@@ -20,9 +20,8 @@
                 sh '''
                 python3 -V
                 python3 -m venv venv
-                . venv/bin/activate
+                source venv/bin/activate
                 pip install DateTime
-                echo "source venv/bin/activate" >> ~/.bashrc
                 '''
             }
         }
