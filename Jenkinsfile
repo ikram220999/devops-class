@@ -21,8 +21,8 @@
                 python3 -V
                 python3 -m venv venv
                 . venv/bin/activate
-                echo "source venv/bin/activate" >> ~/.bashrc
                 pip install DateTime
+                echo "source venv/bin/activate" >> ~/.bashrc
                 '''
             }
         }
