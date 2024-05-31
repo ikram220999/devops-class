@@ -22,6 +22,8 @@
                 python3 -m venv venv
                 . venv/bin/activate
                 pip install DateTime
+                python3 main.py
+
                 '''
             }
         }
