@@ -23,13 +23,14 @@
                 . venv/bin/activate
                 pip install DateTime
                 python3 main.py
-
                 '''
             }
         }
         stage('Test code') {
             steps {
                 sh '''
+                . venv/bin/activate
+                pip install DateTime
                 python3 main.py
                 '''
             }
