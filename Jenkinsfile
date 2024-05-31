@@ -34,6 +34,7 @@ pipeline {
                 '''
                 withEnv(["PATH+VENV=${env.WORKSPACE}/venv/bin"]) {
                     sh '''
+                    printenv
                     python3 main.py
                     '''
                 }
