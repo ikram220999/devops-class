@@ -29,6 +29,9 @@ pipeline {
         }
         stage('Test code') {
             steps {
+                sh '''
+                    printenv
+                '''
                 withEnv(["PATH+VENV=${env.WORKSPACE}/venv/bin"]) {
                     sh '''
                     python3 main.py
