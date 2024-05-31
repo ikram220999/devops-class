@@ -20,16 +20,18 @@ pipeline {
                 sh '''
                 python3 -V
                 python3 -m venv venv
-                sh venv/bin/activate
+                . venv/bin/activate
                 pip install DateTime
                 '''
             }
         }
         stage('Test code') {
             steps {
-                sh '''
-                python3 main.py
-                '''
+                withEnv(["PATH+VENV=${env.WORKSPACE}/venv/bin"]) {
+                    sh '''
+                    python3 main.py
+                    '''
+                }
             }
         }
         stage('Deliver') {
